@@ -1,0 +1,6 @@
+{
+  "name": "AFFEXAI",
+  "description": "Commercial Systems Consultancy for technical B2B and industrial companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
