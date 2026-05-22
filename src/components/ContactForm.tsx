@@ -9,7 +9,7 @@ interface ContactFormProps {
 
 const BUDGETS = [
   { value: '5k-10k', label: '€5,000 — €10,000' },
-  { value: '10k-25k', label: '€10,000 — €25,005' },
+  { value: '10k-25k', label: '€10,000 — €25,000' },
   { value: '25k-50k', label: '€25,000 — €50,000' },
   { value: '50k+', label: '€50,000+ (Dedicated Integration & Systems Rollout)' }
 ];
@@ -259,7 +259,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
 
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Company Website / Base Domain
+                  Company Domain / Current Digital Presence
                 </label>
                 <input
                   type="url"
@@ -322,7 +322,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
                   ))}
                 </select>
                 <span className="text-[10px] text-neutral-400 leading-none mt-1.5 block">
-                  Commercial modernization architecture is scoped start from €5,000.
+                  Commercial modernization architecture starts from €5,000.
                 </span>
               </div>
 

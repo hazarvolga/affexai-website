@@ -87,7 +87,7 @@ export const AUDIT_CHECKPOINTS: AuditCheckpoint[] = [
   {
     id: 'ai_enrichment',
     category: 'Ingestion Automation',
-    question: 'Is your firm ignoring automated ingestion frameworks to parse incoming client tender blueprints, RFQs, or custom request drafts?',
+    question: 'Is your firm ignoring structured ingestion frameworks to parse incoming client tender blueprints, RFQs, or custom request drafts?',
     impactLevel: 'MEDIUM',
     description: 'Modern pre-parsing engines reading complex 50-page tenders instantly flag operational conflicts, regulatory gaps, or contract anomalies.'
   }
@@ -120,13 +120,13 @@ export const TIMELINE_PHASES: TimelinePhase[] = [
   },
   {
     phase: 'PHASE 03',
-    title: 'Frontend & Workflow Build',
+    title: 'Interface & Workflow Build',
     duration: 'Week 5 — Week 8',
     description: 'Developing high-speed, pixel-perfect user interfaces and connecting automation connectors to secure databases.',
     bullets: [
-      'Building ultra-fast responsive React web systems',
+      'Building ultra-fast responsive React interfaces',
       'Configuring automated qualification questionnaires and calculators',
-      'Writing secure background routines or server proxies to connect AI features',
+      'Writing secure background routines or server proxies to connect workflow services',
       'Rigorous integration testing of email, client calendars, and CRM channels'
     ]
   },
@@ -148,7 +148,7 @@ export const PROCESS_STEPS = [
   { unit: '01', title: 'Diagnose', label: 'Commercial Audit & Friction Mapping' },
   { unit: '02', title: 'Position', label: 'Structured Technical Messaging Design' },
   { unit: '03', title: 'Design', label: 'Swiss-Grid High-Credibility UX' },
-  { unit: '04', title: 'Build', label: 'Ultra-Fast Responsive React Frontend' },
+  { unit: '04', title: 'Build', label: 'Ultra-Fast Responsive React Interfaces' },
   { unit: '05', title: 'Automate', label: 'Lead Ingestion & Proposal Pipelines' },
   { unit: '06', title: 'Optimize', label: 'Continuous Telemetry & Conversion Tuning' }
 ];
@@ -185,7 +185,7 @@ export const WHY_US_PILLARS = [
   {
     num: '02',
     title: 'Automation as Serious Leverage',
-    desc: 'We do not build gimmicky chatbots or add generic AI illustrations. We custom-engineer back-office workflows, request ingestion parses, and database-level rules.'
+    desc: 'We do not sell gimmicky demos or generic automation theater. We custom-engineer back-office workflows, request ingestion parses, and database-level rules.'
   },
   {
     num: '03',

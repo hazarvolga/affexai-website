@@ -201,7 +201,7 @@ export default function App() {
                 Commercial Systems for Technical B2B Companies
               </h1>
               <p className="font-sans text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl">
-                Most technical B2B companies do not have a website problem. They have fragmented commercial systems, weak digital credibility, and inefficient proposal workflows.
+                We help engineering, industrial, and technical B2B firms modernize digital credibility, lead qualification, and commercial workflows.
               </p>
 
               {/* Real-world trust bar inside hero */}
@@ -323,7 +323,7 @@ export default function App() {
                 [ RE-VALUING THE CHANNEL ]
               </span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 leading-none">
-                Your website is not the problem. Your commercial system is.
+                Your commercial system is where revenue momentum leaks.
               </h2>
               <div className="h-1 w-12 bg-swiss-red"></div>
             </div>
@@ -331,7 +331,7 @@ export default function App() {
             {/* Righthand Brutal Diagnosis Details */}
             <div className="lg:col-span-7 space-y-6 text-neutral-700">
               <p className="text-base sm:text-lg font-medium text-neutral-950 leading-relaxed">
-                Most web agencies built visual brochures. They focus on superficial parameters like &ldquo;smooth visual flows&rdquo; or award nominations while ignoring how technical customers actually purchase.
+                Many technical firms look credible offline but lose momentum across fragmented positioning, qualification, proposal, and handover workflows. Buyers do not experience one clear commercial system.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -356,10 +356,10 @@ export default function App() {
 
                 <div className="space-y-2 border-l border-neutral-200 pl-4 py-1 hover:border-swiss-red transition-colors">
                   <h4 className="font-display text-sm font-bold text-neutral-900 tracking-wider uppercase">
-                    3. No Automation Infrastructure
+                    3. No Intake Infrastructure
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
-                    A total absence of AI-ready automation structure, resulting in slow quoting responses and poor initial conversion feedback.
+                    No structured inquiry capture, routing logic, or first-response framework, resulting in slow quoting responses and poor initial conversion feedback.
                   </p>
                 </div>
 
@@ -368,7 +368,7 @@ export default function App() {
                     4. Invisible ROI Pipelines
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
-                    No structured conversion tracing, turning capital website re-makes into dark costs rather than direct asset growth.
+                    No structured conversion tracing, turning modernization work into a dark cost rather than a measurable commercial asset.
                   </p>
                 </div>
 
@@ -425,7 +425,7 @@ export default function App() {
                 Commercial Systems Audit
               </h2>
               <div className="font-mono text-xs tracking-widest text-neutral-500 uppercase mt-2">
-                SUBTITLE: A focused diagnostic engagement for technical B2B companies before redesigning, automating, or rebuilding.
+                SUBTITLE: A focused diagnostic engagement for technical B2B companies before modernizing commercial systems.
               </div>
             </div>
 
@@ -443,7 +443,7 @@ export default function App() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-start gap-2 text-sm text-neutral-700">
                   <CheckCircle className="h-4.5 w-4.5 text-swiss-red flex-shrink-0 mt-0.5" />
-                  <span><strong>Current Website &amp; positioning Audit:</strong> Correct vocabulary gaps and missing technical proofs.</span>
+                  <span><strong>Credibility &amp; Positioning Audit:</strong> Correct vocabulary gaps and missing technical proofs.</span>
                 </div>
                 <div className="flex items-start gap-2 text-sm text-neutral-700">
                   <CheckCircle className="h-4.5 w-4.5 text-swiss-red flex-shrink-0 mt-0.5" />
@@ -455,7 +455,7 @@ export default function App() {
                 </div>
                 <div className="flex items-start gap-2 text-sm text-neutral-700">
                   <CheckCircle className="h-4.5 w-4.5 text-swiss-red flex-shrink-0 mt-0.5" />
-                  <span><strong>AI Automation Roadmap:</strong> Practical mapping for parsing inquiries and emails seamlessly.</span>
+                  <span><strong>Intake Automation Roadmap:</strong> Practical mapping for parsing inquiries and routing commercial context.</span>
                 </div>
               </div>
 
@@ -489,7 +489,7 @@ export default function App() {
               Measure Your System Leakage
             </h2>
             <p className="text-sm text-neutral-400">
-              Before planning any visual design modifications or website coding, calculate structural pipeline frictions. Select your current status indicators below to compute real-time overhead estimates.
+              Before planning visual design or implementation work, calculate structural pipeline frictions. Select your current status indicators below to compute real-time overhead estimates.
             </p>
           </div>
 
@@ -510,7 +510,7 @@ export default function App() {
               From audit to implementation
             </h2>
             <p className="text-sm text-neutral-600 mt-2">
-              We structure your digital translation into 4 rigid, measurable deployment phases with continuous support.
+              We structure your commercial modernization into 4 rigid, measurable deployment phases with continuous support.
             </p>
           </div>
 
