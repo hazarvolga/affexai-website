@@ -1,9 +1,27 @@
+# Dependency directories
 node_modules/
-build/
+**/node_modules/
+
+# Build & Output directories
 dist/
+**/dist/
+build/
+**/build/
 coverage/
+**/coverage/
+
+# IDE / System files
 .DS_Store
+**/.DS_Store
 *.log
+**/*.log
+
+# Environment variables & secrets
 .env*
+**/.env*
 !.env.example
+**/!.env.example
+
+# Deployment / Vercel
 .vercel
+**/.vercel

@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# AFFEXAI — Enterprise Commercial Systems Platform
 
-# Run and deploy your AI Studio app
+A unified, multi-module monorepo containing the frontend web application and outbound automation/crawling backend modules for AFFEXAI.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/d60acfd4-3764-4128-a865-ea6f9cdfb4f8
+## Directory Structure
 
-## Run Locally
+```
+affexai-website/ (Root)
+├── frontend/                     # React 19 + TypeScript + Vite + Tailwind CSS Web App
+│   ├── src/
+│   └── package.json
+├── backend/                      # Node.js/TypeScript Backend & Automation Pipelines (Future Integration)
+├── shared/                       # Shared type definitions and schemas between Frontend & Backend
+├── fpvlover-auto-blog.md         # Reference CTO server and crawler configurations
+└── metadata.json                 # Project capabilities manifest
+```
 
-**Prerequisites:**  Node.js
+---
 
+## Modules
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Frontend
+The frontend application represents the client portal and interactive diagnostic tools of the AFFEXAI credibility platform.
+
+#### Getting Started
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set your local environment variable `GEMINI_API_KEY` in `frontend/.env.local`.
+4. Run in development mode:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Technical Architecture & Development Guidelines
+*   **Monorepo Separation**: All code files, dependencies, and local modules for the client app reside exclusively inside `frontend/`. 
+*   **Git Integrity**: File histories are fully preserved in Git.
+*   **Type Safety**: TypeScript 5.x check-safety enforced. Runs `npx tsc --noEmit` inside sub-directories.
