@@ -96,7 +96,7 @@ export default function App() {
               </button>
               <button onClick={() => scrollToSection('audit-section')} className="text-neutral-300 hover:text-swiss-red transition-colors flex items-center gap-1 font-bold cursor-pointer">
                 <span className="h-2 w-2 rounded-full bg-swiss-red animate-pulse"></span>
-                System Simulator
+                Diagnostic Tool
               </button>
             </nav>
 
@@ -155,7 +155,7 @@ export default function App() {
               onClick={() => scrollToSection('audit-section')} 
               className="block w-full text-left py-2 text-swiss-red font-bold"
             >
-              System Simulator
+              Diagnostic Tool
             </button>
             <div className="pt-2 border-t border-neutral-900">
               <button 
@@ -201,7 +201,7 @@ export default function App() {
                 Commercial Systems for Technical B2B Companies
               </h1>
               <p className="font-sans text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl">
-                We help engineering, industrial, and technical B2B firms modernize digital credibility, lead qualification, and commercial workflows.
+                We help technical B2B firms improve credibility, lead qualification, and proposal workflows.
               </p>
 
               {/* Real-world trust bar inside hero */}
@@ -219,15 +219,15 @@ export default function App() {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-4 border-t border-neutral-900">
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">ESTABLISHMENT</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">Founder-led commercial systems consultancy</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Founder-led consultancy</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">TRACK RECORD</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">20+ years digital systems execution experience</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">20+ years execution experience</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">CAPACITY CAP</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">Selective engagements for technical B2B firms</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Selective technical B2B engagements</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">COMPATIBILITY</span>
@@ -754,7 +754,7 @@ export default function App() {
               PROCUREMENT BRIEF TRANSMISSION INTAKE
             </span>
             <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-neutral-950 tracking-tight leading-none pt-2">
-              System Ingestion Intake
+              Request Diagnostic
             </h2>
             <p className="text-sm text-neutral-500 mt-1">
               Transmit your criteria using our structured briefing handler. Selected answers from the pipeline calculator above auto-populate below.

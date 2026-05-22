@@ -138,7 +138,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
                 Diagnostic Request Logged
               </h3>
               <p className="text-sm text-neutral-600 max-w-md mx-auto leading-relaxed">
-                Thank you for your structured request. Your commercial telemetry parameters have been parsed. A principal systems consultant from AFFEXAI will review your structural specs and reach out within 1 business day.
+                Thank you for your structured request. Your commercial review notes have been received. A principal systems consultant from AFFEXAI will review your brief and reach out within 1 business day.
               </p>
             </div>
             
@@ -165,7 +165,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
               <div className="p-3 bg-neutral-950 border border-swiss-red text-neutral-100 text-xs font-mono flex items-center justify-between">
                 <span className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-swiss-red animate-pulse"></span>
-                  Active Diagnostic Metrics Merged Successfully.
+                  Diagnostic Snapshot Added Successfully.
                 </span>
                 <button 
                   type="button" 
@@ -393,14 +393,14 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
               <span className="h-2 w-2 rounded-full bg-neutral-800"></span>
               <span className="h-2 w-2 rounded-full bg-neutral-800"></span>
               <span className="h-2 w-2 rounded-full bg-neutral-800"></span>
-              <span className="text-[10px] text-neutral-500 uppercase tracking-wider font-bold ml-2">PAYLOAD-COMPILER.SH</span>
+              <span className="text-[10px] text-neutral-500 uppercase tracking-wider font-bold ml-2">ASSESSMENT SUMMARY</span>
             </div>
             <span className="text-[9px] text-swiss-red font-bold">STATE: INGEST</span>
           </div>
 
           <div className="space-y-4">
             <div>
-              <span className="text-zinc-600">// Identity Verification Object</span>
+              <span className="text-zinc-600">// Qualification Summary</span>
               <pre className="text-[10px] text-zinc-300 bg-zinc-900/45 p-2 border border-zinc-900 mt-1 overflow-x-auto">
 {`{
   vendor: "AFFEXAI",
@@ -415,7 +415,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
             </div>
 
             <div>
-              <span className="text-zinc-600">// Target System Objectives</span>
+              <span className="text-zinc-600">// Commercial Review Notes</span>
               <pre className="text-[10px] text-zinc-300 bg-zinc-900/45 p-2 border border-zinc-900 mt-1">
 {`{
   critical_budget_tier: "${form.budget}",

@@ -22,7 +22,7 @@ export const SERVICES: ServiceCard[] = [
     deliverables: [
       'Automated Inbound Request Identification',
       'Context-Aware Procurement Document Analysis',
-      'Multi-Source Data Ingestion Frameworks',
+      'Commercial Data Intake Frameworks',
       'Enterprise Handshakes (HubSpot, Salesforce, Pipedrive)'
     ],
     metrics: '-65% Qualification Response Latency'
@@ -86,7 +86,7 @@ export const AUDIT_CHECKPOINTS: AuditCheckpoint[] = [
   },
   {
     id: 'ai_enrichment',
-    category: 'Ingestion Automation',
+    category: 'Commercial Intake Automation',
     question: 'Is your firm ignoring structured ingestion frameworks to parse incoming client tender blueprints, RFQs, or custom request drafts?',
     impactLevel: 'MEDIUM',
     description: 'Modern pre-parsing engines reading complex 50-page tenders instantly flag operational conflicts, regulatory gaps, or contract anomalies.'
@@ -138,7 +138,7 @@ export const TIMELINE_PHASES: TimelinePhase[] = [
     bullets: [
       'Smooth cutover with zero downtime on modern servers',
       'Post-launch speed checkups and schema validation',
-      'Interactive dashboard telemetry and secure lead delivery',
+      'Commercial review reporting and secure lead delivery',
       'Quarterly system efficiency scaling audits'
     ]
   }
@@ -149,8 +149,8 @@ export const PROCESS_STEPS = [
   { unit: '02', title: 'Position', label: 'Structured Technical Messaging Design' },
   { unit: '03', title: 'Design', label: 'Swiss-Grid High-Credibility UX' },
   { unit: '04', title: 'Build', label: 'Ultra-Fast Responsive React Interfaces' },
-  { unit: '05', title: 'Automate', label: 'Lead Ingestion & Proposal Pipelines' },
-  { unit: '06', title: 'Optimize', label: 'Continuous Telemetry & Conversion Tuning' }
+  { unit: '05', title: 'Automate', label: 'Lead Qualification & Proposal Pipelines' },
+  { unit: '06', title: 'Optimize', label: 'Continuous Review & Conversion Tuning' }
 ];
 
 export const TARGET_CLIENTS = [

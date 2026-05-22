@@ -16,11 +16,11 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-01',
     number: '01',
-    title: 'Premium Engineering Commercial Presence Prototype',
+    title: 'Engineering Commercial Presence Transformation',
     clientType: 'Technical B2B Commercial Credibility',
     challenge: 'A technical B2B business needed stronger digital credibility and clearer commercial positioning.',
     solution: 'Rebuilt the commercial-facing digital presence with trust-first architecture, sharper messaging, and premium responsive frontend execution.',
-    outcome: 'Improved executive-facing and client-facing perception, creating a stronger foundation for sales conversations.',
+    outcome: 'Created a stronger executive-facing commercial presentation foundation for technical sales conversations.',
     metrics: [
       { label: 'Credibility Layer', value: 'Upgraded' },
       { label: 'Commercial Positioning', value: 'Sharper' },
@@ -138,7 +138,7 @@ export default function SelectedWork() {
           <div className="relative z-10 flex items-center justify-between border-b border-zinc-800 pb-3 mb-6">
             <span className="text-[10px] text-neutral-400 flex items-center gap-1.5 uppercase tracking-widest font-bold">
               <ShieldCheck className="h-4 w-4 text-swiss-red" />
-              Impact Telemetry
+              Diagnostic Snapshot
             </span>
             <span className="text-[9px] text-neutral-400 bg-neutral-900 px-2 py-0.5 border border-neutral-800">
               CASE {selectedCase.number} AUDIT
