@@ -1,23 +1,31 @@
-import { TIMELINE_PHASES } from '../data';
-import { Calendar, Layers, ShieldCheck, ArrowRight, Hourglass } from 'lucide-react';
+import { TIMELINE_PHASES, LOCALIZED_UI_STRINGS } from '../data';
+import { Language } from '../types';
+import { Hourglass } from 'lucide-react';
 
-export default function Timeline() {
+interface TimelineProps {
+  lang: Language;
+}
+
+export default function Timeline({ lang }: TimelineProps) {
+  const phases = TIMELINE_PHASES[lang];
+  const ui = LOCALIZED_UI_STRINGS[lang].implementation.widget;
+
   return (
     <div className="space-y-8 font-sans">
       <div className="border border-neutral-200 bg-neutral-50 p-4 md:p-6 mb-8 flex flex-col sm:flex-row items-baseline justify-between gap-2">
         <div className="flex items-center gap-2">
           <Hourglass className="h-4 w-4 text-swiss-red" />
           <span className="text-xs font-mono font-bold tracking-widest text-neutral-800 uppercase">
-            ENGAGEMENT BENCHMARK: 8-WEEKS TOTAL DELIVERY
+            {ui.tag}
           </span>
         </div>
         <span className="text-[10px] font-mono text-neutral-400 uppercase">
-          *Subject to technical integration density
+          {ui.sub}
         </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {TIMELINE_PHASES.map((phase, idx) => (
+        {phases.map((phase, idx) => (
           <div 
             key={idx}
             className="border border-neutral-200 bg-white p-6 relative flex flex-col justify-between hover:border-neutral-400 transition-colors"
@@ -56,7 +64,7 @@ export default function Timeline() {
             </div>
 
             <div className="pt-6 mt-6 border-t border-neutral-50 text-[9px] font-mono text-neutral-400 flex items-center gap-1">
-              <span>OUTPUT VERIFIED</span>
+              <span>{ui.output}</span>
               <div className="h-1.5 w-1.5 rounded-full bg-green-500"></div>
             </div>
           </div>

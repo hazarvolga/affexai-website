@@ -1,12 +1,30 @@
 import { useState } from 'react';
-import { Check, AlertTriangle, Cpu, Clock, CheckCircle, ArrowRight, ShieldCheck, FileText, Smartphone } from 'lucide-react';
-import { AUDIT_CHECKPOINTS } from '../data';
+import { Check, AlertTriangle, Clock, Cpu, ShieldCheck, ArrowRight } from 'lucide-react';
+import { AUDIT_CHECKPOINTS, LOCALIZED_UI_STRINGS } from '../data';
+import { Language } from '../types';
 
 interface SimulatorProps {
+  lang: Language;
   onSelectAuditAction: (answers: Record<string, boolean>) => void;
 }
 
-export default function CommercialSystemSimulator({ onSelectAuditAction }: SimulatorProps) {
+const RISK_LABELS: Record<Language, { high: string; moderate: string; low: string }> = {
+  en: {
+    high: 'HIGH RISK (CRITICAL LEAKAGE)',
+    moderate: 'MODERATE RISK (OPERATIONAL FRICTION)',
+    low: 'OPTIMIZED / LOW RISK'
+  },
+  de: {
+    high: 'HOHES RISIKO (KRITISCHER VERLUST)',
+    moderate: 'MITTLERES RISIKO (OPERATIVE REIBUNG)',
+    low: 'OPTIMIERT / GERINGES RISIKO'
+  }
+};
+
+export default function CommercialSystemSimulator({ lang, onSelectAuditAction }: SimulatorProps) {
+  const checkpoints = AUDIT_CHECKPOINTS[lang];
+  const ui = LOCALIZED_UI_STRINGS[lang].simulator.widget;
+
   const [answers, setAnswers] = useState<Record<string, boolean>>({
     positioning: true,
     qualification: true,
@@ -22,10 +40,8 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
     }));
   };
 
-  // Calculate stats based on negative answers (answering False/Unchecked means they have a leak!)
-  // If checked = true means they have the problem! Let's treat answers as "Checked = This is a bottleneck for us"
   const bottlenecksCount = Object.values(answers).filter(Boolean).length;
-  const totalQuestions = AUDIT_CHECKPOINTS.length;
+  const totalQuestions = checkpoints.length;
   
   // Friction index calculation
   const frictionPercentage = Math.round((bottlenecksCount / totalQuestions) * 100);
@@ -35,9 +51,10 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
   const projectedAccuracyBoost = 100 - (bottlenecksCount * 18);
 
   const getFrictionLabel = (percentage: number) => {
-    if (percentage >= 80) return { text: 'HIGH RISK (CRITICAL LEAKAGE)', color: 'text-red-500 border-red-950 bg-red-950/20' };
-    if (percentage >= 50) return { text: 'MODERATE RISK (OPERATIONAL FRICTION)', color: 'text-amber-500 border-amber-950 bg-amber-950/20' };
-    return { text: 'OPTIMIZED / LOW RISK', color: 'text-green-500 border-green-950 bg-green-950/20' };
+    const risk = RISK_LABELS[lang];
+    if (percentage >= 80) return { text: risk.high, color: 'text-red-500 border-red-950 bg-red-950/20' };
+    if (percentage >= 50) return { text: risk.moderate, color: 'text-amber-500 border-amber-950 bg-amber-950/20' };
+    return { text: risk.low, color: 'text-green-500 border-green-950 bg-green-950/20' };
   };
 
   const riskLabel = getFrictionLabel(frictionPercentage);
@@ -52,17 +69,20 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
         <div>
           <div className="flex items-center gap-2 text-swiss-red font-mono text-xs tracking-widest font-bold uppercase mb-2">
             <span className="h-1.5 w-1.5 rounded-full bg-swiss-red"></span>
-            Operational Assessment Matrix
+            {ui.tag}
           </div>
           <h3 className="font-display text-2xl font-bold tracking-tight text-neutral-100">
-            System Friction Diagnostic Check
+            {ui.h3}
           </h3>
           <p className="text-sm text-neutral-400 mt-1 max-w-xl">
-            Toggle observed operational scenarios below to estimate your company&rsquo;s current commercial leakage rating.
+            {ui.desc}
           </p>
         </div>
         <div className="bg-neutral-900 border border-neutral-800 px-4 py-2 font-mono text-xs text-neutral-400 whitespace-nowrap">
-          SYSTEM EFFICIENCY: <span className={frictionPercentage > 50 ? 'text-amber-400' : 'text-green-400'}>{100 - frictionPercentage}% VALUE DETECTABILITY</span>
+          {lang === 'en' ? 'SYSTEM EFFICIENCY:' : 'SYSTEM-EFFIZIENZ:'}{' '}
+          <span className={frictionPercentage > 50 ? 'text-amber-400' : 'text-green-400'}>
+            {100 - frictionPercentage}% {ui.valueText}
+          </span>
         </div>
       </div>
 
@@ -71,10 +91,10 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
         {/* Left Side: Checkpoints Interactive List */}
         <div className="lg:col-span-7 space-y-4">
           <div className="text-xs font-mono text-neutral-500 tracking-wider uppercase mb-2">
-            SELECT ALL KNOWN BOTTLENECKS
+            {ui.selectBottlenecks}
           </div>
           
-          {AUDIT_CHECKPOINTS.map((checkpoint) => {
+          {checkpoints.map((checkpoint) => {
             const isFrictionSource = answers[checkpoint.id];
             return (
               <div 
@@ -100,13 +120,13 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
                       {checkpoint.category}
                     </span>
                     <span className={`font-mono text-[9px] px-1.5 py-0.5 font-semibold ${
-                      checkpoint.impactLevel === 'CRITICAL' 
+                      checkpoint.impactLevel === 'CRITICAL' || checkpoint.impactLevel === 'KRITISCH'
                         ? 'text-red-400 bg-red-950/30' 
-                        : checkpoint.impactLevel === 'HIGH' 
+                        : checkpoint.impactLevel === 'HIGH' || checkpoint.impactLevel === 'HOCH'
                         ? 'text-amber-400 bg-amber-950/30' 
                         : 'text-neutral-400 bg-neutral-800'
                     }`}>
-                      {checkpoint.impactLevel} IMPACT
+                      {checkpoint.impactLevel} {ui.impact}
                     </span>
                   </div>
                   <h4 className="font-sans text-sm font-medium text-neutral-200">
@@ -126,17 +146,17 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
           
           <div>
             <div className="text-xs font-mono text-neutral-500 tracking-wider uppercase mb-4">
-              DIAGNOSTIC METRICS FEEDBACK
+              {ui.metricsTitle}
             </div>
 
             {/* Huge Friction Score */}
             <div className="mb-6">
-              <div className="text-sm font-sans text-neutral-400 mb-1">Commercial Friction Index</div>
+              <div className="text-sm font-sans text-neutral-400 mb-1">{ui.frictionIndex}</div>
               <div className="flex items-baseline gap-2">
                 <span className="font-display text-5xl font-extrabold tracking-tight text-white">
                   {frictionPercentage}%
                 </span>
-                <span className="font-mono text-xs text-neutral-500">of business potential locked</span>
+                <span className="font-mono text-xs text-neutral-500">{ui.frictionSub}</span>
               </div>
               <div className={`mt-3 border px-3 py-1.5 text-xs font-mono text-center tracking-wide font-medium ${riskLabel.color}`}>
                 {riskLabel.text}
@@ -150,11 +170,11 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
                   <Clock className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-neutral-500 uppercase">Est. Cost of Manual Overhead</div>
+                  <div className="text-[10px] font-mono text-neutral-500 uppercase">{ui.weeklyWasted}</div>
                   <div className="text-sm font-sans font-bold text-neutral-200">
-                    {estHoursWeeklyWasted > 0 ? `~${estHoursWeeklyWasted} Hours/Week` : 'Optimized Workflow'}
+                    {estHoursWeeklyWasted > 0 ? `~${estHoursWeeklyWasted} ${ui.weeklyHours}` : ui.weeklyOptimized}
                   </div>
-                  <p className="text-[11px] text-neutral-400">Time spent copying specs & chasing raw emails.</p>
+                  <p className="text-[11px] text-neutral-400">{ui.weeklySub}</p>
                 </div>
               </div>
 
@@ -163,11 +183,11 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
                   <Cpu className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-neutral-500 uppercase">Operational Modernization Score</div>
+                  <div className="text-[10px] font-mono text-neutral-500 uppercase">{ui.modernizationTitle}</div>
                   <div className="text-sm font-sans font-bold text-neutral-200">
-                    {bottlenecksCount > 2 ? 'High Infrastructure Opportunity' : 'Incremental Refinements'}
+                    {bottlenecksCount > 2 ? ui.modernizationHigh : ui.modernizationLow}
                   </div>
-                  <p className="text-[11px] text-neutral-400">Readiness for qualified routing, structured quoting protocols, and CRM sync.</p>
+                  <p className="text-[11px] text-neutral-400">{ui.modernizationSub}</p>
                 </div>
               </div>
 
@@ -176,11 +196,11 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
                   <ShieldCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-neutral-500 uppercase">Credibility Retention Index</div>
+                  <div className="text-[10px] font-mono text-neutral-500 uppercase">{ui.accuracyTitle}</div>
                   <div className="text-sm font-sans font-bold text-neutral-200">
-                    {projectedAccuracyBoost}% Trust Accuracy
+                    {projectedAccuracyBoost}% {ui.trustSuffix}
                   </div>
-                  <p className="text-[11px] text-neutral-400">Score of perceived trust during strategic procurement visits.</p>
+                  <p className="text-[11px] text-neutral-400">{ui.accuracySub}</p>
                 </div>
               </div>
             </div>
@@ -190,12 +210,12 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
             <div className="p-4 bg-neutral-950 border border-neutral-800 space-y-3 mb-4">
               <div className="text-xs font-mono text-neutral-400 flex items-center gap-1.5 font-bold">
                 <AlertTriangle className="h-3.5 w-3.5 text-swiss-red" />
-                FOR RECOVERY ACTION:
+                {ui.recoveryTitle}
               </div>
               <p className="text-[11px] text-neutral-400 leading-relaxed">
                 {bottlenecksCount === 0 
-                  ? 'Your baseline operation shows healthy attributes. Re-audit if proposal cycle times drift or if high-quality inbound pipelines plateau.' 
-                  : `We identified ${bottlenecksCount} distinct friction vectors. Addressing these requires commercial systems architectural restructuring, not simple visual adjustments.`
+                  ? ui.recoveryHealthy 
+                  : ui.recoveryFriction.replace('{count}', bottlenecksCount.toString())
                 }
               </p>
             </div>
@@ -204,7 +224,7 @@ export default function CommercialSystemSimulator({ onSelectAuditAction }: Simul
               onClick={() => onSelectAuditAction(answers)}
               className="w-full bg-white hover:bg-neutral-100 transition-colors text-black text-xs font-mono font-bold py-3 uppercase flex items-center justify-center gap-2"
             >
-              Apply Findings to Audit Brief
+              {ui.cta}
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>

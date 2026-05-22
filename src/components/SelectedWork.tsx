@@ -1,52 +1,18 @@
 import { useState } from 'react';
-import { ShieldCheck, ArrowRight, Building, Settings, FileSpreadsheet } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
+import { CASE_STUDIES, LOCALIZED_UI_STRINGS } from '../data';
+import { Language } from '../types';
 
-interface CaseStudy {
-  id: string;
-  number: string;
-  title: string;
-  clientType: string;
-  challenge: string;
-  solution: string;
-  outcome: string;
-  metrics: { label: string; value: string }[];
+interface SelectedWorkProps {
+  lang: Language;
 }
 
-const CASE_STUDIES: CaseStudy[] = [
-  {
-    id: 'case-01',
-    number: '01',
-    title: 'Engineering Commercial Presence Transformation',
-    clientType: 'Technical B2B Commercial Credibility',
-    challenge: 'A technical B2B business needed stronger digital credibility and clearer commercial positioning.',
-    solution: 'Rebuilt the commercial-facing digital presence with trust-first architecture, sharper messaging, and premium responsive frontend execution.',
-    outcome: 'Created a stronger executive-facing commercial presentation foundation for technical sales conversations.',
-    metrics: [
-      { label: 'Credibility Layer', value: 'Upgraded' },
-      { label: 'Commercial Positioning', value: 'Sharper' },
-      { label: 'Sales Conversation Base', value: 'Stronger' }
-    ]
-  },
-  {
-    id: 'case-02',
-    number: '02',
-    title: 'Heavy Infrastructure & Construction Consortium',
-    clientType: 'International Energy & Civil Infrastructure Projects',
-    challenge: 'Generating technical pricing proposals consumed up to 18 hours per tender of senior engineering manpower. Multiple versions of quotes were scattered across legacy offline Excel spreadsheets with significant data-entry risk.',
-    solution: 'Configured a parameter-driven Commercial Proposal Automation engine. Unified complex product formulas, pricing rules, and safety factor calculations into a secure, browser-based administrative interface for engineering directors.',
-    outcome: 'Reduced multi-day bidding and quotation labor to less than 15 minutes. Safeguarded margins by enforcing validated pricing algorithms locked behind secure database protocols.',
-    metrics: [
-      { label: 'Quoting Labor Saved', value: '80%' },
-      { label: 'Data Transcription Errors', value: '0%' },
-      { label: 'Tender Prep Duration', value: '<15 Min' }
-    ]
-  }
-];
-
-export default function SelectedWork() {
+export default function SelectedWork({ lang }: SelectedWorkProps) {
+  const caseStudies = CASE_STUDIES[lang];
+  const ui = LOCALIZED_UI_STRINGS[lang].caseStudies.widget;
   const [activeId, setActiveId] = useState<string>('case-01');
 
-  const selectedCase = CASE_STUDIES.find(c => c.id === activeId) || CASE_STUDIES[0];
+  const selectedCase = caseStudies.find(c => c.id === activeId) || caseStudies[0];
 
   return (
     <div id="case-studies" className="border border-neutral-200 bg-white p-6 md:p-10 font-sans">
@@ -54,36 +20,36 @@ export default function SelectedWork() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-200 pb-6 mb-8">
         <div>
           <span className="font-mono text-xs text-swiss-red tracking-widest font-bold uppercase block mb-1">
-            [ VERIFIED SYSTEMS ENGAGEMENTS ]
+            {ui.tag}
           </span>
           <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-neutral-950">
-            Selected Case Studies
+            {ui.h3}
           </h3>
           <p className="text-sm text-neutral-500 mt-1 max-w-xl">
-            Real outcomes delivered for industrial and technical organizations. We align presentation credibility with robust back-office automation rules.
+            {ui.desc}
           </p>
         </div>
 
         {/* System tabs selector */}
         <div className="flex bg-neutral-100 p-1 border border-neutral-200">
-          {CASE_STUDIES.map((c) => (
+          {caseStudies.map((c) => (
             <button
               key={c.id}
               onClick={() => setActiveId(c.id)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase transition-all duration-150 ${
+              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase transition-all duration-150 whitespace-nowrap ${
                 activeId === c.id 
                   ? 'bg-neutral-950 text-white' 
                   : 'text-neutral-500 hover:text-neutral-850'
               }`}
             >
-              Case {c.number}
+              {lang === 'en' ? `Case ${c.number}` : `Projekt ${c.number}`}
             </button>
           ))}
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Side: System Details structured precisely as requested */}
+        {/* Left Side: System Details */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-4">
             <h4 className="font-display text-lg font-bold text-neutral-900 border-b border-neutral-100 pb-2">
@@ -93,7 +59,7 @@ export default function SelectedWork() {
             <div className="space-y-4 text-sm">
               <div>
                 <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">
-                  Client Type
+                  {ui.clientType}
                 </span>
                 <p className="font-medium text-neutral-800">
                   {selectedCase.clientType}
@@ -102,7 +68,7 @@ export default function SelectedWork() {
 
               <div>
                 <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">
-                  Challenge
+                  {ui.challenge}
                 </span>
                 <p className="text-neutral-600 leading-relaxed">
                   {selectedCase.challenge}
@@ -111,7 +77,7 @@ export default function SelectedWork() {
 
               <div>
                 <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">
-                  Solution
+                  {ui.solution}
                 </span>
                 <p className="text-neutral-600 leading-relaxed">
                   {selectedCase.solution}
@@ -120,7 +86,7 @@ export default function SelectedWork() {
 
               <div>
                 <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">
-                  Outcome
+                  {ui.outcome}
                 </span>
                 <p className="text-neutral-700 leading-relaxed font-medium">
                   {selectedCase.outcome}
@@ -132,22 +98,22 @@ export default function SelectedWork() {
 
         {/* Right Side: Operational Outcome Panel */}
         <div className="lg:col-span-5 border border-neutral-200 bg-neutral-950 p-6 text-white font-mono text-xs relative overflow-hidden min-h-[340px] flex flex-col justify-between">
-          {/* Blueprint Grid - Muted opacity to reduce intensity */}
+          {/* Blueprint Grid */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-30"></div>
 
           <div className="relative z-10 flex items-center justify-between border-b border-zinc-800 pb-3 mb-6">
             <span className="text-[10px] text-neutral-400 flex items-center gap-1.5 uppercase tracking-widest font-bold">
               <ShieldCheck className="h-4 w-4 text-swiss-red" />
-              Diagnostic Snapshot
+              {ui.snapshot}
             </span>
             <span className="text-[9px] text-neutral-400 bg-neutral-900 px-2 py-0.5 border border-neutral-800">
-              CASE {selectedCase.number} AUDIT
+              {ui.caseAudit.replace('{num}', selectedCase.number)}
             </span>
           </div>
 
           <div className="relative z-10 flex-1 space-y-6">
             <div className="text-[11px] text-zinc-400 leading-relaxed uppercase">
-              System installation verified: Standard pre-qualification parameters successfully executed with modern database constraints.
+              {ui.verified}
             </div>
 
             <div className="grid grid-cols-1 gap-3">
@@ -161,8 +127,8 @@ export default function SelectedWork() {
           </div>
 
           <div className="relative z-10 border-t border-zinc-900 pt-3 mt-6 text-[9px] text-zinc-500 flex justify-between items-center">
-            <span>AUDIT REFERENCE: {selectedCase.id.toUpperCase()}</span>
-            <span className="text-swiss-red font-bold">VERIFIED RATING</span>
+            <span>{ui.ref.replace('{ref}', selectedCase.id.toUpperCase())}</span>
+            <span className="text-swiss-red font-bold">{ui.rating}</span>
           </div>
         </div>
       </div>
