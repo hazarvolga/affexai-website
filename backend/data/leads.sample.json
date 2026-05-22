@@ -1,0 +1,24 @@
+[
+  {
+    "id": "lead_001",
+    "companyName": "Müller HVAC Engineering GmbH",
+    "website": "https://example.com",
+    "country": "Germany",
+    "industry": "HVAC Engineering",
+    "contactName": "Johann Müller",
+    "contactRole": "Managing Director",
+    "email": "johann.mueller@hvac-example.invalid",
+    "status": "New"
+  },
+  {
+    "id": "lead_002",
+    "companyName": "Apex Digital Solutions Ltd",
+    "website": "https://example.org",
+    "country": "United Kingdom",
+    "industry": "Software Services",
+    "contactName": "Sarah Jenkins",
+    "contactRole": "Head of Growth",
+    "email": "sjenkins@apex-example.invalid",
+    "status": "New"
+  }
+]
