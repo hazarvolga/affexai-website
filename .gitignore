@@ -25,3 +25,9 @@ coverage/
 # Deployment / Vercel
 .vercel
 **/.vercel
+
+# Sensitive Server and Outbound Business Files
+sunucular/
+AFFEXAI-ACTION-MASTER- DOCUMENT.md
+fpvlover-auto-blog.md
+
