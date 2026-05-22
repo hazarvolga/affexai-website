@@ -16,15 +16,15 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-01',
     number: '01',
-    title: 'Custom Engineering & Turbine Manufacturer',
-    clientType: 'Industrial Machinery & Precision Engineering',
-    challenge: 'An outdated, slow digital presentation generated low pre-qualification trust among serious procurement managers. High-value sales cycles were delayed by endless back-and-forth emails seeking basic technical variables.',
-    solution: 'Designed and deployed a modern Executive Credibility system alongside a secure parameter-based qualification intake. Configured active schema documentation layouts that instantly validated the manufacturer’s technical capabilities to institutional buyers.',
-    outcome: 'Eliminated manual email qualification of leads by 65%. Increased response velocity with high-intent enterprise pipeline routed directly to core technical partners in under 5 minutes.',
+    title: 'Premium Engineering Commercial Presence Prototype',
+    clientType: 'Technical B2B Commercial Credibility',
+    challenge: 'A technical B2B business needed stronger digital credibility and clearer commercial positioning.',
+    solution: 'Rebuilt the commercial-facing digital presence with trust-first architecture, sharper messaging, and premium responsive frontend execution.',
+    outcome: 'Improved executive-facing and client-facing perception, creating a stronger foundation for sales conversations.',
     metrics: [
-      { label: 'Qualification Latency', value: '-65%' },
-      { label: 'Technical Score Alignment', value: '100%' },
-      { label: 'Manual Response Time', value: '<5 Min' }
+      { label: 'Credibility Layer', value: 'Upgraded' },
+      { label: 'Commercial Positioning', value: 'Sharper' },
+      { label: 'Sales Conversation Base', value: 'Stronger' }
     ]
   },
   {

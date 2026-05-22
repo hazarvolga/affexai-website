@@ -219,23 +219,23 @@ export default function App() {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-4 border-t border-neutral-900">
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">ESTABLISHMENT</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">Founder-led execution</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Founder-led commercial systems consultancy</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">TRACK RECORD</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">20+ years systems expertise</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">20+ years digital systems execution experience</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">CAPACITY CAP</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">Selective engagements only</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Selective engagements for technical B2B firms</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">COMPATIBILITY</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">Built for technical B2B</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Focused on credibility and qualification</span>
                 </div>
                 <div>
                   <span className="font-mono text-[9px] text-swiss-red uppercase block font-bold mb-0.5">SCALE</span>
-                  <span className="text-neutral-400 text-[11px] leading-tight block">International project exposure</span>
+                  <span className="text-neutral-400 text-[11px] leading-tight block">Proposal workflows and commercial modernization</span>
                 </div>
               </div>
 
