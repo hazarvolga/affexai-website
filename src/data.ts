@@ -661,11 +661,28 @@ export const LOCALIZED_UI_STRINGS = {
       h2: 'Our 6-Step Engine',
       p: 'From identification to final continuous tuning.'
     },
+    ctaBlock: {
+      h2: 'Need modern credibility infrastructure, automated qualification pipelines, or commercial systems that actually drive B2B revenue?',
+      p: 'Direct outcome translation requires starting from diagnostic analysis. Skip the generic agency briefing meetings. Let’s map your real pipeline leaks.',
+      cta: 'Request Diagnostic',
+      secondary: 'View Capabilities'
+    },
     footer: {
       vp: 'COMMERCIAL SYSTEMS CONSULTANCY FOR TECHNICAL B2B FIRMS // FOUNDER-LED // DACH-READY ARCHITECTURE',
       p: 'We engineer functional commercial infrastructure for technical and industrial organisations, solving lead qualification and quoting problems at the core.',
       anchors: 'CORE ANCHORS',
-      rights: '© {year} AFFEXAI. All rights reserved. Precise Swiss-Grid Engineering Design Execution.'
+      rights: '© {year} AFFEXAI. All rights reserved. Precise Swiss-Grid Engineering Design Execution.',
+      locationsTitle: 'OPERATIONAL LOCATIONS',
+      locations: [
+        'Turkey Head Office — Remote Native',
+        'DACH-Compliant & EU-Symmetric Workcycles',
+        'RELIABILITY ASSURED AT ALL TIER CHANNELS'
+      ],
+      legal: {
+        impressum: 'IMPRESSUM',
+        datenschutz: 'DATENSCHUTZ',
+        version: 'v2.10 PROD'
+      }
     },
     contact: {
       tag: 'PROCUREMENT BRIEF TRANSMISSION INTAKE',
@@ -927,11 +944,28 @@ export const LOCALIZED_UI_STRINGS = {
       h2: 'Unser 6-Stufen-System',
       p: 'Von der detaillierten Diagnose bis zur kontinuierlichen Optimierung.'
     },
+    ctaBlock: {
+      h2: 'Benötigen Sie eine zeitgemäße Glaubwürdigkeits-Infrastruktur, automatisierte Qualifizierungs-Pipelines oder kaufmännische Systeme, die B2B-Umsätze steigern?',
+      p: 'Ergebnisse setzen eine präzise Diagnose voraus. Sparen Sie sich unverbindliche Kennenlerngespräche. Lassen Sie uns die Schwachstellen Ihrer Pipeline analysieren.',
+      cta: 'Diagnose anfordern',
+      secondary: 'Leistungen ansehen'
+    },
     footer: {
       vp: 'KOMMERZIELLE SYSTEMBERATUNG FÜR TECHNISCHE B2B-UNTERNEHMEN // INHABERGEFÜHRT // DACH-READY SYSTEME',
       p: 'Wir entwickeln funktionale kaufmännische Infrastrukturen für Technologie- und Industrieunternehmen und lösen Probleme bei Lead-Qualifizierung und Angebotserstellung an der Wurzel.',
       anchors: 'ZENTRALE NAVIGATİON',
-      rights: '© {year} AFFEXAI. Alle Rechte vorbehalten. Präzise Ausführung nach Schweizer Grid-Engineering-Standards.'
+      rights: '© {year} AFFEXAI. Alle Rechte vorbehalten. Präzise Ausführung nach Schweizer Grid-Engineering-Standards.',
+      locationsTitle: 'OPERATIVE STANDORTE',
+      locations: [
+        'Hauptsitz Türkei — Remote Native',
+        'DACH-konforme & EU-symmetrische Arbeitszyklen',
+        'ZUVERLÄSSIGKEIT AUF ALLEN KANÄLEN GARANTIERT'
+      ],
+      legal: {
+        impressum: 'IMPRESSUM',
+        datenschutz: 'DATENSCHUTZ',
+        version: 'v2.10 PROD'
+      }
     },
     contact: {
       tag: 'KAUFMÄNNISCHER SYSTEM-BRIEFING-INGEST',

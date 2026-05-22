@@ -120,13 +120,17 @@ export default function CommercialSystemSimulator({ lang, onSelectAuditAction }:
                       {checkpoint.category}
                     </span>
                     <span className={`font-mono text-[9px] px-1.5 py-0.5 font-semibold ${
-                      checkpoint.impactLevel === 'CRITICAL' || checkpoint.impactLevel === 'KRITISCH'
+                      checkpoint.impactLevel === 'CRITICAL'
                         ? 'text-red-400 bg-red-950/30' 
-                        : checkpoint.impactLevel === 'HIGH' || checkpoint.impactLevel === 'HOCH'
+                        : checkpoint.impactLevel === 'HIGH'
                         ? 'text-amber-400 bg-amber-950/30' 
                         : 'text-neutral-400 bg-neutral-800'
                     }`}>
-                      {checkpoint.impactLevel} {ui.impact}
+                      {checkpoint.impactLevel === 'CRITICAL' 
+                        ? (lang === 'de' ? 'KRITISCH' : 'CRITICAL')
+                        : checkpoint.impactLevel === 'HIGH'
+                        ? (lang === 'de' ? 'HOCH' : 'HIGH')
+                        : (lang === 'de' ? 'MITTEL' : 'MEDIUM')} {ui.impact}
                     </span>
                   </div>
                   <h4 className="font-sans text-sm font-medium text-neutral-200">
