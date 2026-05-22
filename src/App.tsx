@@ -465,7 +465,7 @@ export default function App() {
                   onClick={() => scrollToSection('audit-section')}
                   className="bg-neutral-950 hover:bg-neutral-800 transition-colors text-white py-2 px-4 text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2"
                 >
-                  Configure Audit Prioritization
+                  Request Diagnostic
                   <ArrowRight className="h-3.5 w-3.5" />
                 </button>
               </div>
@@ -732,14 +732,14 @@ export default function App() {
               onClick={() => scrollToSection('audit-section')}
               className="bg-white text-black hover:bg-neutral-100 transition-colors py-3 px-6 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer"
             >
-              Start with a Commercial Systems Audit
+              Request Diagnostic
               <ArrowRight className="h-4 w-4 text-swiss-red" />
             </button>
             <button
               onClick={() => scrollToSection('audit-brief-intake')}
               className="border border-neutral-800 bg-neutral-900 text-neutral-300 hover:bg-neutral-800 transition-colors py-3 px-6 text-xs font-mono uppercase tracking-wider text-center cursor-pointer"
             >
-              Send Project Brief
+              View Capabilities
             </button>
           </div>
         </div>
@@ -797,7 +797,7 @@ export default function App() {
                 <li><button onClick={() => scrollToSection('capabilities')} className="hover:text-white text-left">Capabilities</button></li>
                 <li><button onClick={() => scrollToSection('implementation')} className="hover:text-white text-left">Process</button></li>
                 <li><button onClick={() => scrollToSection('case-studies')} className="hover:text-white text-left">Selected Work</button></li>
-                <li><button onClick={() => scrollToSection('audit-brief-intake')} className="hover:text-white text-left">Contact Panel</button></li>
+                <li><button onClick={() => scrollToSection('audit-brief-intake')} className="hover:text-white text-left">Request Diagnostic</button></li>
               </ul>
             </div>
 

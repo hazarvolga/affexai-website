@@ -8,10 +8,10 @@ interface ContactFormProps {
 }
 
 const BUDGETS = [
-  { value: '5k-10k', label: '€5,000 — €10,000' },
-  { value: '10k-25k', label: '€10,000 — €25,000' },
-  { value: '25k-50k', label: '€25,000 — €50,000' },
-  { value: '50k+', label: '€50,000+ (Dedicated Integration & Systems Rollout)' }
+  { value: '5k-10k', label: '€5k–€10k' },
+  { value: '10k-25k', label: '€10k–€25k' },
+  { value: '25k-50k', label: '€25k–€50k' },
+  { value: '50k+', label: '€50k+' }
 ];
 
 const TIMELINES = [
@@ -155,7 +155,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
               onClick={resetForm}
               className="px-6 py-2.5 bg-neutral-900 hover:bg-neutral-850 text-white transition-colors text-xs font-mono font-bold uppercase"
             >
-              Configure New Brief
+              Request Diagnostic
             </button>
           </div>
         ) : (
@@ -180,7 +180,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Full Name <span className="text-swiss-red">*</span>
+                  Name <span className="text-swiss-red">*</span>
                 </label>
                 <input
                   type="text"
@@ -212,7 +212,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Corporate Role / Title <span className="text-swiss-red">*</span>
+                  Role / Position <span className="text-swiss-red">*</span>
                 </label>
                 <input
                   type="text"
@@ -227,7 +227,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
 
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Industry Focus <span className="text-swiss-red">*</span>
+                  Industry <span className="text-swiss-red">*</span>
                 </label>
                 <input
                   type="text"
@@ -259,7 +259,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
 
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Company Domain / Current Digital Presence
+                  Company Website / Current Digital Presence
                 </label>
                 <input
                   type="url"
@@ -275,7 +275,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
             {/* Selection Grid for Needs */}
             <div>
               <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-2">
-                Operational Modules Under Active Scope (Select all that apply)
+                  Commercial Systems Scope (Select all that apply)
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {NEEDS_OPTIONS.map((option) => {
@@ -307,7 +307,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Project Budget Scope Allocation
+                  Budget Range
                 </label>
                 <select
                   name="budget"
@@ -328,7 +328,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
 
               <div>
                 <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                  Estimated Deployment Deadline
+                  Desired Timeline
                 </label>
                 <select
                   name="timeline"
@@ -347,7 +347,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
 
             <div>
               <label className="block text-xs font-mono font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
-                Primary Commercial Challenge & Details <span className="text-swiss-red">*</span>
+                Primary Challenge <span className="text-swiss-red">*</span>
               </label>
               <textarea
                 name="message"
@@ -373,7 +373,7 @@ export default function ContactForm({ prefilledAuditData, onClearPrefill }: Cont
                 </>
               ) : (
                 <>
-                  Transmit Request to Core Advisors
+                  Request Diagnostic
                   <Send className="h-3.5 w-3.5 text-swiss-red" />
                 </>
               )}
